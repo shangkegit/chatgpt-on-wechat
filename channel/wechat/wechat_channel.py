@@ -89,7 +89,13 @@ class WechatChannel(Channel):
             content = content_list[1]
 
         config = conf()
-        match_prefix = msg['IsAt'] or self.check_prefix(origin_content, config.get('group_chat_prefix'))
+        bot_prefix = self.check_prefix(content, conf().get('single_chat_prefix'))
+        if bot_prefix is not '':
+            str_list = content.split(bot_prefix, 1)
+            if len(str_list) == 2:
+                content = str_list[1].strip()
+                
+        match_prefix = msg['IsAt'] and bot_prefix is not None or self.check_prefix(origin_content, config.get('group_chat_prefix'))
         if (group_name in config.get('group_name_white_list') or 'ALL_GROUP' in config.get('group_name_white_list')) and match_prefix:
             img_match_prefix = self.check_prefix(content, conf().get('image_create_prefix'))
             if img_match_prefix:
