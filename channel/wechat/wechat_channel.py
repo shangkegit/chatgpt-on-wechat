@@ -48,7 +48,7 @@ class WechatChannel(Channel):
         match_prefix = self.check_prefix(content, conf().get('single_chat_prefix'))
         if from_user_id == other_user_id and match_prefix is not None:
             # 好友向自己发送消息
-            if match_prefix is not '':
+            if match_prefix != '':
                 str_list = content.split(match_prefix, 1)
                 if len(str_list) == 2:
                     content = str_list[1].strip()
@@ -90,7 +90,7 @@ class WechatChannel(Channel):
 
         config = conf()
         bot_prefix = self.check_prefix(content, conf().get('single_chat_prefix'))
-        if bot_prefix is not '':
+        if bot_prefix != '':
             str_list = content.split(bot_prefix, 1)
             if len(str_list) == 2:
                 content = str_list[1].strip()
