@@ -16,6 +16,7 @@ def load_config():
     config_str = read_file(config_path)
     # 将json字符串反序列化为dict类型
     config = json.loads(config_str)
+    config['open_ai_api_key']=os.getenv('OPEN_AI_API_KEY')
     logger.info("[INIT] load config: {}".format(config))
 
 
