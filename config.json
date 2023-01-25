@@ -1,8 +1,0 @@
-{
-  "open_ai_api_key": "",
-  "single_chat_prefix": ["龙猫", "@龙猫"],
-  "single_chat_reply_prefix": "[龙猫] ",
-  "group_chat_prefix": ["@龙猫"],
-  "group_name_white_list": "ALL GROUP",
-  "image_create_prefix": ["画", "看", "找"]
-}
