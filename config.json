@@ -3,6 +3,6 @@
   "single_chat_prefix": ["龙猫", "@龙猫"],
   "single_chat_reply_prefix": "[龙猫] ",
   "group_chat_prefix": ["@龙猫"],
-  "group_name_white_list": ["openaichat","我的一家","幸福的一家","全家快乐跨年群"],
+  "group_name_white_list": ["openaichat","ALL_GROUP","我的一家","幸福的一家","全家快乐跨年群"],
   "image_create_prefix": ["画", "看", "找"]
 }
